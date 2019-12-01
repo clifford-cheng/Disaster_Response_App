@@ -50,7 +50,7 @@ def tokenize(text):
     #Tokenize words
     tokens = word_tokenize(text)
     
-    # Stem word tokens and remove stop words
+    # Remove stop words
     stemmer = PorterStemmer()
     stop_words = stopwords.words("english")
     
@@ -58,6 +58,7 @@ def tokenize(text):
     
     return stemmed
 
+#Don't need since stemmer.
 #     lemmatizer = WordNetLemmatizer()
 #     clean_tokens = []
 #     for tok in tokens:
@@ -68,6 +69,7 @@ def tokenize(text):
 
 def build_model():
     """Builds classification model """
+    #If model building takes too long, change n_estimators to a lower number. 
     
     pipeline = Pipeline([
     ('vect', CountVectorizer(tokenizer = tokenize, min_df = 5)),
