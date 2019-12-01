@@ -14,8 +14,9 @@
 3. Go to http://0.0.0.0:3001/
 
 ### Files:
-- data/process_data.py: The ETL pipeline used to process data in preparation for model building.
+- process_data.py: The ETL pipeline used to process data in preparation for model building. This code takes csv data containing messages and categories, cleans it, and creates an SQLite database.
 
-- models/train_classifier.py: The Machine Learning pipeline used to fit, tune, evaluate, and export the model to a Python pickle (pickle is not uploaded to the repo due to size constraints.).
-- app/templates/*.html: HTML templates for the web app.
-- run.py: Start the Python server for the web app and prepare visualizations.
+- train_classifier.py: This code takes the SQLite database to train and tune a ML model for categorizing the messages. The output is a pickle file where the fitted model resides. 
+
+
+
