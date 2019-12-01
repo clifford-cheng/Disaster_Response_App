@@ -23,7 +23,7 @@ def clean_data(df):
     categories = df['categories'].str.split(pat = ';', expand = True)
     
     #Take the first row of categories. Use copy to preserve original categories data. 
-    row = categories.iloc[0]
+    row = categories.iloc[0].copy()
     
     #Clean data. Remove numeric at end. Outcome is list of 36 category column names. 
     
@@ -50,9 +50,6 @@ def clean_data(df):
     
     # Drop duplicates
     df.drop_duplicates(inplace = True)
-    
-    # Remove rows with a related value of 2 from the dataset
-    df = df[df['related'] != 2]
     
     return df
 
