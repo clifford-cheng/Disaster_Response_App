@@ -16,7 +16,7 @@
 ### Files:
 - process_data.py: The ETL pipeline used to process data in preparation for model building. This code takes csv data containing messages and categories, cleans it, and creates an SQLite database.
 
-- train_classifier.py: This code takes the SQLite database to train and tune a ML model for categorizing the messages. The output is a pickle file where the fitted model resides. 
+- train_classifier.py: This code takes the SQLite database to train and tune a ML model for categorizing the messages. The output is a pickle file where the fitted model resides. If the model takes too long to build, change n_estimators to a lower number. 
 
 
 
